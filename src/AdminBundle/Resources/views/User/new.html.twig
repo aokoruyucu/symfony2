@@ -3,16 +3,25 @@
 {% block title %}User creation{% endblock %}
 
 {% block section %}
-    <h1>User creation</h1>
+    <div class=row">
 
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <input type="submit" value="Create" />
-    {{ form_end(form) }}
+        <h1 class="text-center">User creation</h1>
+        <div class="create">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <input type="submit" value="Create" />
+            {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_user_index') }}">Back to the list</a>
-        </li>
-    </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+        <ul>
+            <li>
+                <a href="{{ path('admin_user_index') }}">Back to the list</a>
+            </li>
+        </ul>
+        </div>
+    </div>
 {% endblock %}
+
+

@@ -60,3 +60,29 @@ p.session-message {
 table.records_list td {
     padding: 10px;
 }
+
+.create label{
+    width:30%;
+    float: left;
+
+}
+.create input{
+    width:70%;
+    float: left;
+
+}
+
+.create textarea{
+    width:70%;
+    float: left;
+
+}
+
+#modelbundle_post_publishedAt_date{
+    width:40%;
+    float: left;
+}
+#modelbundle_post_publishedAt_time{
+    width:60%;
+
+}
