@@ -1,0 +1,14 @@
+<div class="row">
+<article class="text-left">
+    <header>
+        <h2><a href="{{ path('cekirdek_post_show', { slug: post.slug }) }}">{{ post.title }}</a></h2>
+        <p>
+            {{ 'post.on' | trans }} <time datetime="{{ post.createdAt | date('c') }}">{{ post.createdAt | date }}</time>
+            {{ 'by' | trans }} <a href="{{ path('cekirdek_user_show', { slug: post.user.slug }) }}">{{ post.user.name }} {{ post.user.surname }}</a>
+
+        </p>
+    </header>
+
+    <p>{{ post.content | truncate(400) }} &#8212; <a href="{{ path('cekirdek_post_show',{ slug:post.slug }) }}">{{ 'read.more' | trans }} &raquo;</a></p>
+</article>
+</div>

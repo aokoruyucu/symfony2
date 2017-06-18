@@ -1,0 +1,43 @@
+{% extends 'AdminBundle::layout.html.twig' %}
+
+{% block title %}User list{% endblock %}
+
+{% block section %}
+    <h1>User list</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Created at</th>
+            <th>Updated at</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.createdAt | date('Y-m-d H:i:s') }}</td>
+                <td>{% if user.updatedAt %}{{ user.updatedAt | date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ user.name }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_user_show', { 'slug': user.slug }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_user_edit', { 'slug': user.slug }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_user_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

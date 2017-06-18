@@ -1,0 +1,17 @@
+home: Home
+
+on: on
+by: by
+read.more: Read more
+name: Name
+
+post:
+  plural: Posts
+  latest: Latest posts
+  on: Posted on
+  by: Posts by
+  by.author: Posts by %name% %surname%
+
+user:
+  empty.post: This user didn't write a post :)
+

@@ -1,0 +1,37 @@
+{% extends "CekirdekBundle::layout.html.twig" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+{% block section %}
+<div class="row">
+    <div class="col-lg-6">
+        <article class="post text-left">
+            <header>
+                <h1>{{ post.title }}</h1>
+                <p>
+                    {{ 'post.on' | trans }} <time datetime="{{ post.createdAt | date('c') }}">{{ post.createdAt | date }}</time>
+                </p>
+            </header>
+
+            <p>{{ post.content | nl2br }}</p>
+        </article>
+    </div>
+    <div class="col-lg-6">
+        <aside>
+            <h3>Created By</h3>
+
+            <p>
+                <a href="{{ path('cekirdek_user_show', { slug: post.user.slug }) }}" title="{{ 'post.by.author' | trans({ '%name%': post.user.name,'%surname%': post.user.surname}) }}">
+                    {{ post.user.name }} {{ post.user.surname }}
+                </a>
+            </p>
+        </aside>
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}
+
+

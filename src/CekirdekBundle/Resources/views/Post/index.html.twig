@@ -1,0 +1,22 @@
+{% extends "CekirdekBundle::layout.html.twig" %}
+
+{% block title %}{{ 'post.plural' | trans }}{% endblock %}
+
+
+
+{% block section %}
+
+    <div class="row">
+        <div class="col-lg-6">
+            {% for post in posts %}
+                {{ include('CekirdekBundle:Post:_post.html.twig', { post: post }) }}
+            {% endfor %}
+        </div>
+        <div class="col-lg-6 text-center">
+            <img src="https://media.giphy.com/media/l2JegFJcNUOc6OpMI/giphy.gif">
+        </div>
+
+    </div>
+
+
+{% endblock %}
