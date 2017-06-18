@@ -1,16 +1,26 @@
 {% extends 'AdminBundle::layout.html.twig' %}
+{% block title %}New{% endblock %}
+{% block section %}
+    <div class=row">
 
-{% block body %}
-    <h1>Post creation</h1>
+        <h1 class="text-center">Post creation</h1>
+        <div class="login-form-1">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <input type="submit" value="Create" />
+            {{ form_end(form) }}
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+        </div>
+        <ul>
+            <li>
+                <a href="{{ path('admin_post_index') }}">Back to the list</a>
+            </li>
+        </ul>
+    </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_post_index') }}">Back to the list</a>
-        </li>
-    </ul>
+
+
+
+
+
 {% endblock %}
